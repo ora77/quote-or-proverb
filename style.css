@@ -1,0 +1,69 @@
+* {
+  background-color: #d3d3d3;
+  font-size: 16px;
+}
+
+main {
+  width: 60%;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+}
+
+.legend {
+  text-align: center;
+}
+
+.fieldset {
+  display: flex;
+  justify-content: center;
+  gap: 30%;
+  border-style: none;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  margin-top: 1em;
+  width: 30%;
+  border-radius: 10px;
+  background-color: grey;
+  color: white;
+  padding: 5px;
+  border: none;
+}
+
+.insert {
+  width: 100%;
+  height: 6em;
+  margin-top: 2em;
+  border-radius: 10px;
+  border: none;
+  background-color: grey;
+  color: white;
+  overflow: hidden;
+  resize: none;
+}
+
+::placeholder {
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.addInsert {
+  display: block;
+  margin: auto;
+  background-color: grey;
+  border-radius: 10px;
+  border: none;
+  width: 60%;
+  height: 2em;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <h4 class="heading">My App title</h4>
+      <form>
+        <fieldset role="radiogroup" class="fieldset">
+          <legend class="legend">
+            Would you like a quote or a proverb ?
+          </legend>
+          <div>
+            <input type="radio" name="input" class="quote" />
+            <label for="quote">A quote</label>
+          </div>
+          <div>
+            <input type="radio" name="input" class="proverb" />
+            <label for="proverb">A Proverb</label>
+          </div>
+        </fieldset>
+      </form>
+      <div class="btn-container">
+        <button class="btn submitBtn">See my message</button>
+        <button class="btn addBtn">Add message</button>
+      </div>
+      <textarea class="insert" placeholder="?"></textarea>
+    </main>
+    <script src="./javascript.js"></script>
+  </body>
+</html>
