@@ -10,26 +10,35 @@
   <body>
     <main>
       <h4 class="heading">My App title</h4>
-      <form>
-        <fieldset role="radiogroup" class="fieldset">
-          <legend class="legend">
-            Would you like a quote or a proverb ?
-          </legend>
-          <div>
-            <input type="radio" name="input" class="quote" />
-            <label for="quote">A quote</label>
-          </div>
-          <div>
-            <input type="radio" name="input" class="proverb" />
-            <label for="proverb">A Proverb</label>
-          </div>
-        </fieldset>
+      <p>Would you like a quote or a proverb ?</p>
+      <form id="display-msg-form">
+        <input type="radio" name="input" class="quote" id="quote" />
+        <label for="quote">A quote</label>
+
+        <input type="radio" name="input" class="proverb" id="proverb" />
+        <label for="proverb">A Proverb</label>
+
+        <input type="submit" class="btn submitBtn" value="See my message" />
       </form>
+      <div class="insert">?</div>
+
       <div class="btn-container">
-        <button class="btn submitBtn">See my message</button>
         <button class="btn addBtn">Add message</button>
+        <button class="btn addFavBtn">Add to Favorites</button>
+        <button class="btn displayFavBtn">Display favorites</button>
       </div>
-      <textarea class="insert" placeholder="?"></textarea>
+      <form id="add-msg-form">
+        <label for="type">Type</label>
+        <select id="type">
+          <option>Quote</option>
+          <option>Proverb</option>
+        </select>
+
+        <label for="message">Message</label>
+        <input id="message" type="text" />
+
+        <input type="submit" />
+      </form>
     </main>
     <script src="./javascript.js"></script>
   </body>
