@@ -12,7 +12,7 @@ p {
   text-align: center;
 }
 
-#display-msg-form{
+#display-msg-form {
   text-align: center;
 }
 
@@ -20,7 +20,7 @@ p {
   text-align: center;
 }
 
-div.insert{
+div.insert {
   text-align: center;
 }
 
@@ -34,11 +34,12 @@ div.insert{
 .btn-container {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .btn {
   margin-top: 1em;
-  width: 30%;
+  width: 40%;
   border-radius: 10px;
   background-color: grey;
   color: white;
@@ -61,14 +62,6 @@ div.insert{
   resize: none;
 }
 
-::placeholder {
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 3em;
-  font-weight: bold;
-}
-
 .addInsert {
   display: block;
   margin: auto;
@@ -77,4 +70,21 @@ div.insert{
   border: none;
   width: 60%;
   height: 2em;
+}
+
+.add-msg-form__label {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.add-msg-form__select{
+  text-align: center;
+}
+
+.add-msg-form__input {
+  width: 100%;
+}
+
+div.insert.favoritesInsert{
+  height: 28em;
 }

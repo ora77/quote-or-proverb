@@ -19,6 +19,7 @@
         <label for="proverb">A Proverb</label>
 
         <input type="submit" class="btn submitBtn" value="See my message" />
+        <input type="submit" class="btn resetBtn" value="Reset" />
       </form>
       <div class="insert">?</div>
 
@@ -28,16 +29,16 @@
         <button class="btn displayFavBtn">Display favorites</button>
       </div>
       <form id="add-msg-form">
-        <label for="type">Type</label>
-        <select id="type">
+        <label for="type" class="add-msg-form__label">Type</label>
+        <select id="type" class="btn add-msg-form__select">
           <option>Quote</option>
           <option>Proverb</option>
         </select>
 
-        <label for="message">Message</label>
-        <input id="message" type="text" />
+        <label for="message" class="add-msg-form__label">Message</label>
+        <input id="message" type="text" class="btn add-msg-form__input" />
 
-        <input type="submit" />
+        <input type="submit" class="btn" />
       </form>
     </main>
     <script src="./javascript.js"></script>

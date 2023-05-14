@@ -51,24 +51,14 @@ const displayMsgForm = document.querySelector("#display-msg-form");
 const submitDisplayMsgFormBtn = document.querySelector(
   "#display-msg-form .submitBtn"
 );
+const addToFavoritesBtn = document.querySelector(".addFavBtn");
+const displayFavoriteBtn = document.querySelector(".displayFavBtn");
 submitDisplayMsgFormBtn.disabled = true;
 
-const resetButton = document.createElement("button");
-resetButton.innerText = "Reset";
-
-const confirmButton = document.createElement("button");
-confirmButton.innerText = "Confirm";
+const resetButton = document.querySelector(".resetBtn");
 
 const addMsgForm = document.getElementById("add-msg-form");
 addMsgForm.style.display = "none";
-
-const buttonArray = [resetButton, confirmButton];
-for (let elmt of buttonArray) {
-  elmt.className = "btn";
-  elmt.style.margin = "2em 35% 0 35%";
-  elmt.style.height = "2em";
-  elmt.style.padding = "5px";
-}
 
 const addMsgInput = document.createElement("input");
 addMsgInput.className = "addInsert";
@@ -115,7 +105,7 @@ displayMsgForm.addEventListener("submit", (e) => {
 resetButton.addEventListener("click", function () {
   messageContainer.innerText = "?";
 
-  addMessageBtn.disabled = false; // true or false
+  addMessageBtn.disabled = false;
   quoteRadio.disabled = false;
   proverbRadio.disabled = false;
   submitDisplayMsgFormBtn.disabled = false;
@@ -141,10 +131,31 @@ addMsgForm.addEventListener("submit", (e) => {
       message: addMsgForm.querySelector("#message").value,
       id: Math.max(...data.map((msg) => msg.id)) + 1,
     };
-    messageContainer.innerText = newMessage.message; /////??????
+    messageContainer.innerText = newMessage.message;
     data.push(newMessage);
     addMsgForm.style.display = "none";
   }
 });
 
-// faire une boucle sur un tableau de deux elements quoteRadio et proverbRadio
+let favorites = [];
+
+addToFavoritesBtn.addEventListener("click", () => {
+  if (localStorage.getItem("favorites") !== null) {
+    favorites = JSON.parse(localStorage.getItem("favorites"));
+  }
+
+  if (messageContainer.innerText !== "?") {
+    const newFavorite = {
+      message: messageContainer.innerText,
+    };
+
+    favorites.push(newFavorite);
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    messageContainer.innerText = "?";
+  }
+});
+
+displayFavoriteBtn.addEventListener("click", () => {
+  window.location = "./favorites.html";
+});
