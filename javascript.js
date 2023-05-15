@@ -64,6 +64,15 @@ const addMsgInput = document.createElement("input");
 addMsgInput.className = "addInsert";
 addMsgInput.style.marginTop = "2em";
 
+// Nice idea, but you could have had one function with a parameter 
+/*
+  const getRandomMsg = (type) => {
+    const filteredData = data.filter((elmt) => elmt.type === type);
+    return filteredData[Math.floor(Math.random() * filteredData.length)].message;
+  }
+  and then use it like so :
+  getRandomMsg("quote");
+*/
 const getRandomQuote = () => {
   const quoteData = data.filter((elmt) => elmt.type === "quote");
   return quoteData[Math.floor(Math.random() * quoteData.length)].message;
@@ -94,6 +103,7 @@ displayMsgForm.addEventListener("submit", (e) => {
     messageContainer.disabled = true;
     document.body.querySelector("#display-msg-form").appendChild(resetButton);
   } else {
+    // Yes display error msg ;) code missing
     // display error msg
   }
   submitDisplayMsgFormBtn.disabled = true;
@@ -119,6 +129,8 @@ addMessageBtn.addEventListener("click", () => {
 
 addMsgForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  // the second condition is weird ? If you want to check on an empty string you can use
+  // if (addMsgForm.querySelector("#message").value == null) {...}
   if (
     !addMsgForm.querySelector("#message").value ||
     !addMsgForm.querySelector("#message").value.replace(/\s/g, "").length
@@ -137,6 +149,7 @@ addMsgForm.addEventListener("submit", (e) => {
   }
 });
 
+// An array is normally not reassigned, so use const. Pushing is not reassgning ;)
 let favorites = [];
 
 addToFavoritesBtn.addEventListener("click", () => {
